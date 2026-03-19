@@ -9,7 +9,7 @@ src
  ├── API
  ├── Application
  ├── Domain
- └── Infra
+ └── Infrastructure
  
 Responsabilidades das camadas
 
@@ -189,3 +189,32 @@ Exemplo de resposta em caso de erro:
 }
 
 Como a aplicação não depende de serviços externos, estratégias adicionais como Retry, Circuit Breaker ou Fallback não foram necessárias neste contexto.
+
+Requisitos Não-Funcionais
+
+Escalabilidade
+A API foi projetada como stateless, permitindo escalabilidade horizontal
+com múltiplas instâncias atrás de um load balancer.
+
+Disponibilidade
+A separação de camadas seguindo Clean Architecture permite evolução
+independente dos componentes e facilita estratégias de alta disponibilidade.
+
+Desempenho
+A arquitetura desacoplada permite a introdução de cache e otimizações
+de acesso a dados sem impacto na camada de domínio.
+
+Confiabilidade
+Testes unitários garantem o funcionamento correto das regras de negócio
+e ajudam a prevenir regressões.
+
+Segurança
+
+A API foi projetada para permitir a implementação de mecanismos de segurança
+utilizados em ambientes produtivos, como:
+
+- Autenticação baseada em JWT
+- Autorização baseada em roles ou policies
+- Proteção via API Gateway
+- Rate limiting para mitigação de ataques
+- Comunicação segura via HTTPS
