@@ -1,0 +1,6 @@
+@VerxTest_HostAddress = http://localhost:5185
+
+GET {{VerxTest_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
